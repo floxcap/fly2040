@@ -1,0 +1,23 @@
+(module IND-SMD_L2.5-W2.0 (layer F.Cu) (tedit 6360578E) 
+ (fp_text reference REF** (at 0 -3.207) (layer F.SilkS) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (fp_text value std:6285bfa8ae8145039d85d4888d6a50b0 (at 0 -0.667) (layer F.Fab) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (fp_circle (center 1.25 -1) (end 1.28 -1) (layer Eco2.User) (width 0.06)) 
+ (fp_line (start 1.25 1) (end -1.25 1) (layer F.CrtYd) (width 0.12)) 
+ (fp_line (start -1.25 1) (end -1.25 -1) (layer F.CrtYd) (width 0.12)) 
+ (fp_line (start -1.25 -1) (end 1.25 -1) (layer F.CrtYd) (width 0.12)) 
+ (fp_line (start 1.25 -1) (end 1.25 1) (layer F.CrtYd) (width 0.12)) 
+ (fp_line (start -0.197 1.016) (end 0.197 1.016) (layer F.SilkS) (width 0.254)) 
+ (fp_line (start 0.197 -1.016) (end -0.197 -1.016) (layer F.SilkS) (width 0.254)) 
+ (pad 1 smd rect (at 1.028 0) (size 1.2 2.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
+ (pad 2 smd rect (at -1.028 0) (size 1.2 2.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
+ (fp_poly (pts (xy 0.45 -1) (xy 1.25 -1) (xy 1.25 1) (xy 0.45 1)) (layer Eco2.User) (width 0.12)) 
+ (fp_poly (pts (xy -1.25 -1) (xy -0.45 -1) (xy -0.45 1) (xy -1.25 1)) (layer Eco2.User) (width 0.12)) 
+ (model ${KIPRJMOD}/kicad_lceda.3dshapes/IND-SMD_L2.5-W2.0-H1.2.step 
+   (offset (xyz -914.349 685.775 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)) 
+  ) (model ${KIPRJMOD}/kicad_lceda.3dshapes/IND-SMD_L2.5-W2.0-H1.2.wrl 
+   (offset (xyz -914.349 685.775 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)) 
+  ) 
+ 
+)

@@ -1,0 +1,13 @@
+(module IND_0603 (layer F.Cu) (tedit 633F68E8) 
+ (fp_text reference REF** (at 0 -3.207) (layer F.SilkS) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (fp_text value std:35dab75d8e9946dfb25145e897547dbd (at 0 -0.667) (layer F.Fab) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (pad 1 smd rect (at -0.8 0 90) (size 1 0.95) (drill 0) (layers F.Cu F.Paste F.Mask)) 
+ (pad 2 smd rect (at 0.8 0 90) (size 1 0.95) (drill 0) (layers F.Cu F.Paste F.Mask)) 
+ (fp_line (start -1.275 -0.5) (end 1.275 -0.5) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start 1.275 -0.5) (end 1.275 0.5) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start 1.275 0.5) (end -1.275 0.5) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start -1.275 0.5) (end -1.275 -0.5) (layer F.CrtYd) (width 0.152)) 
+ 
+)

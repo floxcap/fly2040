@@ -1,0 +1,3 @@
+[submodule "pcb/prj-kicad-jlcpcb"]
+	path = pcb/prj-kicad-jlcpcb
+	url = https://github.com/TomKeddie/prj-kicad-jlcpcb.git

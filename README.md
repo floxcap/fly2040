@@ -1,2 +1,2 @@
-# fly32
-ESP32-S3 based 
+# fly2040
+Basic RP2040 board.

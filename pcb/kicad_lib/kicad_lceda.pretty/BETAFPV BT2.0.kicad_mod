@@ -1,0 +1,22 @@
+(module "BETAFPV BT2.0" (layer F.Cu) (tedit 633A2C3E) 
+ (fp_text reference REF** (at 0 -3.207) (layer F.SilkS) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (fp_text value std:6c6d4f88268248a38000752b3e47b425 (at 0 -0.667) (layer F.Fab) 
+   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
+ (fp_line (start 1.999 -2.101) (end -1.778 -2.101) (layer F.SilkS) (width 0.2)) 
+ (fp_line (start -1.778 -2.101) (end -1.778 2.101) (layer F.SilkS) (width 0.2)) 
+ (fp_line (start -1.778 2.101) (end 1.999 2.101) (layer F.SilkS) (width 0.2)) 
+ (pad 1 thru_hole rect (at 0 0) (size 1.8 3) (drill 1.6) (layers *.Cu *.Mask)) 
+ (pad 2 thru_hole oval (at 2 0) (size 1.8 3) (drill 1.6) (layers *.Cu *.Mask)) 
+ (fp_arc (start 2 0) (end 2 -2.1) (angle 180.00001963679387) (layer F.SilkS) (width 0.2)) 
+ (model "${KIPRJMOD}/kicad_lceda.3dshapes/BT2.0 Male.step" 
+   (offset (xyz 1.1 0 -3)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 -180)) 
+  ) (model "${KIPRJMOD}/kicad_lceda.3dshapes/BT2.0 Male.wrl" 
+   (offset (xyz 1.1 0 -3)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 -180)) 
+  ) 
+ (fp_line (start -1.778 -2.108) (end 4.115 -2.108) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start 4.115 -2.108) (end 4.115 2.083) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start 4.115 2.083) (end -1.778 2.083) (layer F.CrtYd) (width 0.152)) 
+ (fp_line (start -1.778 2.083) (end -1.778 -2.108) (layer F.CrtYd) (width 0.152)) 
+ 
+)
