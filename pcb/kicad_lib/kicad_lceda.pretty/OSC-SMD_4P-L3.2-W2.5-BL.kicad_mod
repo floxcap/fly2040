@@ -1,42 +1,162 @@
-(module OSC-SMD_4P-L3.2-W2.5-BL (layer F.Cu) (tedit 64695635) 
- (fp_text reference REF** (at 0 -3.207) (layer F.SilkS) 
-   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
- (fp_text value std:fde525906f004b04890fe3f9fe02cca8 (at 0 -0.667) (layer F.Fab) 
-   (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
- (fp_circle (center -1.6 1.25) (end -1.57 1.25) (layer Eco2.User) (width 0.06)) 
- (fp_circle (center -1.088 1.567) (end -0.961 1.567) (layer Dwgs.User) (width 0.254)) 
- (fp_poly (pts (xy -1.486 0.428) (xy -1.45 0.428) (xy -1.45 1.004) (xy -1.486 1.004)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.522 0.428) (xy -1.486 0.428) (xy -1.486 1.004) (xy -1.522 1.004)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.558 0.428) (xy -1.522 0.428) (xy -1.522 1.004) (xy -1.558 1.004)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.594 0.464) (xy -1.558 0.464) (xy -1.558 1.004) (xy -1.594 1.004)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.63 0.464) (xy -1.594 0.464) (xy -1.594 0.572) (xy -1.63 0.572)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.666 0.5) (xy -1.63 0.5) (xy -1.63 0.608) (xy -1.666 0.608)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.702 0.536) (xy -1.666 0.536) (xy -1.666 0.608) (xy -1.702 0.608)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy -1.738 0.536) (xy -1.702 0.536) (xy -1.702 0.608) (xy -1.738 0.608)) (layer Dwgs.User) (width 0.12)) 
- (fp_poly (pts (xy 0.6 -1.249) (xy 1.5 -1.249) (xy 1.5 -0.449) (xy 0.6 -0.449)) (layer Eco2.User) (width 0.12)) 
- (fp_poly (pts (xy -1.5 -1.249) (xy -0.6 -1.249) (xy -0.6 -0.449) (xy -1.5 -0.449)) (layer Eco2.User) (width 0.12)) 
- (fp_poly (pts (xy -1.5 0.449) (xy -0.6 0.449) (xy -0.6 1.249) (xy -1.5 1.249)) (layer Eco2.User) (width 0.12)) 
- (fp_poly (pts (xy 0.6 0.449) (xy 1.5 0.449) (xy 1.5 1.249) (xy 0.6 1.249)) (layer Eco2.User) (width 0.12)) 
- (fp_line (start -2.286 1.397) (end -2.286 1.905) (layer F.SilkS) (width 0.152)) 
- (fp_line (start -2.286 1.905) (end -1.778 1.905) (layer F.SilkS) (width 0.152)) 
- (fp_line (start -2.029 1.679) (end -2.029 -1.651) (layer F.SilkS) (width 0.152)) 
- (fp_line (start -2.029 -1.651) (end 2.032 -1.651) (layer F.SilkS) (width 0.152)) 
- (fp_line (start 2.032 -1.651) (end 2.032 0) (layer F.SilkS) (width 0.152)) 
- (fp_line (start 2.032 0) (end 2.032 1.651) (layer F.SilkS) (width 0.152)) 
- (fp_line (start 2.032 1.651) (end 2.032 1.651) (layer F.SilkS) (width 0.152)) 
- (fp_line (start 2.032 1.651) (end -2.029 1.679) (layer F.SilkS) (width 0.152)) 
- (pad 1 smd rect (at -1.1 0.875) (size 1.4 1.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
- (pad 2 smd rect (at 1.1 0.875) (size 1.4 1.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
- (pad 3 smd rect (at 1.1 -0.875) (size 1.4 1.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
- (pad 4 smd rect (at -1.1 -0.875) (size 1.4 1.2) (drill 0) (layers F.Cu F.Paste F.Mask)) 
- (fp_line (start -1.6 1.25) (end -1.6 -1.25) (layer F.CrtYd) (width 0.12)) 
- (fp_line (start -1.6 -1.25) (end 1.6 -1.25) (layer F.CrtYd) (width 0.12)) 
- (fp_line (start 1.6 -1.25) (end 1.6 1.25) (layer F.CrtYd) (width 0.12)) 
- (fp_line (start 1.6 1.25) (end -1.6 1.25) (layer F.CrtYd) (width 0.12)) 
- (model ${KIPRJMOD}/kicad_lceda.3dshapes/OSC-SMD_4P-L3.2-W2.5-H1.0.step 
-   (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)) 
-  ) (model ${KIPRJMOD}/kicad_lceda.3dshapes/OSC-SMD_4P-L3.2-W2.5-H1.0.wrl 
-   (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)) 
-  ) 
- 
+(footprint "OSC-SMD_4P-L3.2-W2.5-BL" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr smd)
+  (fp_text reference "REF**" (at 0 -3.207) (layer "F.SilkS")
+      (effects (font (size 1 1) (thickness 0.15)) (justify left))
+    (tstamp 3e32ff05-58f1-480d-b9dc-58c16e54518b)
+  )
+  (fp_text value "std:fde525906f004b04890fe3f9fe02cca8" (at 0 -0.667) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)) (justify left))
+    (tstamp 75356a97-ca28-4bab-adc1-bca47ff226b3)
+  )
+  (fp_line (start -2.286 1.397) (end -2.286 1.905)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 935ae7dd-66c0-4a62-a3e6-aeb3f3c307a7))
+  (fp_line (start -2.286 1.905) (end -1.778 1.905)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 7a44cd6d-a8ba-4d63-8f58-a1ad978725b4))
+  (fp_line (start -2.029 -1.651) (end 2.032 -1.651)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 8151db2e-b93b-4145-afdd-183aa1ee1e4d))
+  (fp_line (start -2.029 1.679) (end -2.029 -1.651)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp fc2458cb-3766-451a-9a2f-472cff941e54))
+  (fp_line (start 2.032 -1.651) (end 2.032 0)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 9e8d79de-0be5-49d8-8a2e-b31debfc9e08))
+  (fp_line (start 2.032 0) (end 2.032 1.651)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 3fa03043-bd27-4167-884c-72ad5a80276c))
+  (fp_line (start 2.032 1.651) (end -2.029 1.679)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp ae0eadc5-84da-4a40-8217-ea980936d664))
+  (fp_line (start 2.032 1.651) (end 2.032 1.651)
+    (stroke (width 0.152) (type solid)) (layer "F.SilkS") (tstamp 60e461e1-a3f1-4fa0-a076-d89df6b47ac0))
+  (fp_circle (center -1.088 1.567) (end -0.961 1.567)
+    (stroke (width 0.254) (type solid)) (fill none) (layer "Dwgs.User") (tstamp 2274f858-bf34-4730-8d9b-a19e148f3c03))
+  (fp_poly
+    (pts
+      (xy -1.738 0.536)
+      (xy -1.702 0.536)
+      (xy -1.702 0.608)
+      (xy -1.738 0.608)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp 1c1a3028-5c28-4a63-8bba-b267fa7c2689))
+  (fp_poly
+    (pts
+      (xy -1.702 0.536)
+      (xy -1.666 0.536)
+      (xy -1.666 0.608)
+      (xy -1.702 0.608)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp e6f7bdbf-7b13-43e9-9a53-9f98e74e4c85))
+  (fp_poly
+    (pts
+      (xy -1.666 0.5)
+      (xy -1.63 0.5)
+      (xy -1.63 0.608)
+      (xy -1.666 0.608)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp cb5b518b-928d-4003-8efd-a9f0fa236813))
+  (fp_poly
+    (pts
+      (xy -1.63 0.464)
+      (xy -1.594 0.464)
+      (xy -1.594 0.572)
+      (xy -1.63 0.572)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp ed23cc93-c46a-466b-b00d-59064795f482))
+  (fp_poly
+    (pts
+      (xy -1.594 0.464)
+      (xy -1.558 0.464)
+      (xy -1.558 1.004)
+      (xy -1.594 1.004)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp a9c41bcc-eb2b-4cd6-95fd-247c3da77c31))
+  (fp_poly
+    (pts
+      (xy -1.558 0.428)
+      (xy -1.522 0.428)
+      (xy -1.522 1.004)
+      (xy -1.558 1.004)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp 25ff8fc9-31c6-42cc-b7cb-6e88963522b2))
+  (fp_poly
+    (pts
+      (xy -1.522 0.428)
+      (xy -1.486 0.428)
+      (xy -1.486 1.004)
+      (xy -1.522 1.004)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp 9e002e3a-b3a0-43e3-a2b4-163850b0f20e))
+  (fp_poly
+    (pts
+      (xy -1.486 0.428)
+      (xy -1.45 0.428)
+      (xy -1.45 1.004)
+      (xy -1.486 1.004)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Dwgs.User") (tstamp bb2b9abf-ae09-4204-b777-d7652ac133a1))
+  (fp_circle (center -1.6 1.25) (end -1.57 1.25)
+    (stroke (width 0.06) (type solid)) (fill none) (layer "Eco2.User") (tstamp 98cb6540-3fd4-41c3-9e8d-ca925cc430d3))
+  (fp_poly
+    (pts
+      (xy -1.5 -1.249)
+      (xy -0.6 -1.249)
+      (xy -0.6 -0.449)
+      (xy -1.5 -0.449)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Eco2.User") (tstamp cfd1a860-0bf6-42f8-8c1c-e90efe9ae32a))
+  (fp_poly
+    (pts
+      (xy -1.5 0.449)
+      (xy -0.6 0.449)
+      (xy -0.6 1.249)
+      (xy -1.5 1.249)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Eco2.User") (tstamp 48e73c1d-c5e5-4b5c-a364-d6431ad1e0f8))
+  (fp_poly
+    (pts
+      (xy 0.6 -1.249)
+      (xy 1.5 -1.249)
+      (xy 1.5 -0.449)
+      (xy 0.6 -0.449)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Eco2.User") (tstamp c9a6c2fe-f8e7-41d1-b267-b0d23bb995bd))
+  (fp_poly
+    (pts
+      (xy 0.6 0.449)
+      (xy 1.5 0.449)
+      (xy 1.5 1.249)
+      (xy 0.6 1.249)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "Eco2.User") (tstamp 70e484c4-4b90-4c00-9d12-35d16d8f5c3d))
+  (fp_line (start -1.6 -1.25) (end 1.6 -1.25)
+    (stroke (width 0.12) (type solid)) (layer "F.CrtYd") (tstamp c55236af-756b-4908-92c4-044fffec9f4d))
+  (fp_line (start -1.6 1.25) (end -1.6 -1.25)
+    (stroke (width 0.12) (type solid)) (layer "F.CrtYd") (tstamp e63c3446-2035-4010-99f5-0330c7e96f21))
+  (fp_line (start 1.6 -1.25) (end 1.6 1.25)
+    (stroke (width 0.12) (type solid)) (layer "F.CrtYd") (tstamp c42f3e9f-23eb-4990-a4e7-8f926d2cfd25))
+  (fp_line (start 1.6 1.25) (end -1.6 1.25)
+    (stroke (width 0.12) (type solid)) (layer "F.CrtYd") (tstamp cf5f7e73-19c2-4549-b416-d6925ce2fad9))
+  (pad "1" smd rect (at -1.1 0.875) (size 1.4 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 3c8c1315-c41b-4818-97cf-7a85aff99e89))
+  (pad "2" smd rect (at 1.1 0.875) (size 1.4 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 330c511d-9085-4104-b5e0-45ae335725c1))
+  (pad "3" smd rect (at 1.1 -0.875) (size 1.4 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 4d489132-df66-40cb-8e0b-9dd1986128b7))
+  (pad "4" smd rect (at -1.1 -0.875) (size 1.4 1.2) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c5b8385b-b5a4-4d83-81f5-3f07bbdf081f))
+  (model "${KIPRJMOD}/kicad_lceda.3dshapes/OSC-SMD_4P-L3.2-W2.5-H1.0.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+  (model "${KIPRJMOD}/kicad_lceda.3dshapes/OSC-SMD_4P-L3.2-W2.5-H1.0.wrl"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
