@@ -1,0 +1,33 @@
+{
+  "layout": {
+    "type": "grid",
+    "rows": 4,
+    "cols": 3
+  },
+  "tabs": {
+    "type": "full"
+  },
+  "cuts": {
+    "type": "vcuts"
+  },
+  "framing": {
+    "type": "frame",
+    "width": "5mm",
+    "space": "0.2mm",
+    "fillet": "1mm",
+    "mintotalheight": "70mm",
+    "mintotalwidth": "70mm"
+  },
+  "fiducials": {
+    "type": "3fid",
+    "hoffset": "15mm",
+    "voffset": "3.35mm",
+    "coppersize": "2mm",
+    "opening": "1mm"
+  },
+  "tooling": {
+    "style": "3hole",
+    "size": "1.152mm",
+    "paste": false
+  }
+}

@@ -1,4 +1,4 @@
-(module TSOT-23-5_L2.9-W1.6-P0.95-LS2.8-BL (layer F.Cu) (tedit 636097FE) 
+(module TSOT-23-5_L2.9-W1.6-P0.95-LS2.8-BL (layer F.Cu) (tedit 646E0798) 
  (fp_text reference REF** (at 0 -3.207) (layer F.SilkS) 
    (effects (font (size 1 1) (thickness 0.15)) (justify left))) 
  (fp_text value std:43583875b34d432e942198f906796c56 (at 0 -0.667) (layer F.Fab) 
