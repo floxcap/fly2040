@@ -2,7 +2,9 @@
   "layout": {
     "type": "grid",
     "rows": 4,
-    "cols": 3
+    "cols": 3,
+    "hspace": "0mm",
+    "vspace": "0mm"
   },
   "tabs": {
     "type": "full"
@@ -14,7 +16,6 @@
     "type": "frame",
     "width": "5mm",
     "space": "0.2mm",
-    "fillet": "1mm",
     "mintotalheight": "70mm",
     "mintotalwidth": "70mm"
   },
@@ -28,6 +29,8 @@
   "tooling": {
     "style": "3hole",
     "size": "1.152mm",
-    "paste": false
+    "hoffset": "2.5mm",
+    "voffset": "2.5mm",
+    "paste": true
   }
 }
