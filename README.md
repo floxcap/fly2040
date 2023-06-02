@@ -2,7 +2,15 @@
 Basic RP2040 board.
 Not yet tested and going through updates.
 
-The new double sided board is tiny!! 
+There are currently 3 boards.
+
+The fly2040 is an experimental board with line isolation and USB isolation.
+The intention here is to be able to disconnect the lines when not in use.
+
+The fly2040_min board is an attempt at making a single sided board as small
+as possible.
+
+The fly2040_ds is a tiny double sided board. The double sided board is tiny!! 
 15mm x 12mm (0.59in x 0.47in)
 
 Panels provided for fabrication.
