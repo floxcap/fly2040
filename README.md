@@ -1,6 +1,14 @@
 # fly2040
 Basic RP2040 board.
-Not yet tested and going through updates.
+
+Note - most of these boards require a 3.3V power supply when programming.
+A simple programming PCB is being designed and will be released shortly.
+The intention is to be able to program the boards with a 1.27mm pitch test clip / pogo pins.
+
+The v1 fly2040 board has been tested and is working except for the led/5V boost circuit - don't use.
+The v2 fly2040 board is work in progress - don't use.
+The fly2040_min board is going through assembly and testing now - no issues expected.
+The fly2040_ds is not yet tested and going through updates.
 
 There are currently 3 boards.
 
