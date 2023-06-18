@@ -1,0 +1,75 @@
+(footprint "CPU_Pads" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "SMD Crystal SERIES SMD0603/4 http://www.petermann-technik.de/fileadmin/petermann/pdf/SMD0603-4.pdf, 6.0x3.5mm^2 package")
+  (tags "SMD SMT crystal")
+  (attr smd exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+  (fp_text reference "REF**" (at 0 -2.95) (layer "F.SilkS") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 966a42fb-5808-499c-8b5d-69e9276a3515)
+  )
+  (fp_text value "CPU_Pads" (at 0 2.95) (layer "F.Fab") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 81a14e10-c372-4afd-9be0-8fdc43c35f18)
+  )
+  (fp_text user "${REFERENCE}" (at -0.025 4.375) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 25dc6653-2c1b-49d3-b474-8cbb6989f78d)
+  )
+  (fp_poly
+    (pts
+      (xy -3.756 0.64)
+      (xy -3.756 -0.614)
+      (xy -3.083 -0.614)
+      (xy -3.083 0.64)
+    )
+
+    (stroke (width 0.0254) (type solid)) (fill none) (layer "Cmts.User") (tstamp 08d6eb32-79b1-4add-95e8-604a71ee71ae))
+  (fp_poly
+    (pts
+      (xy 2.803 0.775)
+      (xy -2.472 0.775)
+      (xy -2.472 -0.425)
+      (xy 2.803 -0.425)
+    )
+
+    (stroke (width 0.0254) (type solid)) (fill none) (layer "Cmts.User") (tstamp 5d0084ce-5ee0-4b04-bc8e-60edc8e0d3e8))
+  (fp_poly
+    (pts
+      (xy 3.483 0.64)
+      (xy 3.483 -0.614)
+      (xy 4.156 -0.614)
+      (xy 4.156 0.64)
+    )
+
+    (stroke (width 0.0254) (type solid)) (fill none) (layer "Cmts.User") (tstamp d32e6bf6-5ad0-429c-b6b0-ee88e5cc4753))
+  (fp_poly
+    (pts
+      (xy 5.767 0.222)
+      (xy 4.513 0.222)
+      (xy 4.513 -0.451)
+      (xy 5.767 -0.451)
+    )
+
+    (stroke (width 0.0254) (type solid)) (fill none) (layer "Cmts.User") (tstamp 20c35273-a88d-4c21-9b72-04546959bafc))
+  (pad "1" smd rect (at -3.875 0) (size 0.3 1.6) (layers "F.Cu" "F.Mask")
+    (zone_connect 2) (tstamp 4919a047-5543-44db-b905-b6f409b39a9d))
+  (pad "2" smd rect (at -2.95 1) (size 0.3 2.2) (drill (offset 0 -0.6)) (layers "F.Cu" "F.Mask")
+    (clearance 0.3) (zone_connect 2) (tstamp a65a7580-e884-4430-b98b-e092be97c334))
+  (pad "3" smd rect (at 3.35 1) (size 0.3 2.2) (drill (offset 0 -0.6)) (layers "F.Cu" "F.Mask")
+    (clearance 0.3) (zone_connect 2) (tstamp 100a353d-f425-4651-8979-ab9fcd6fd526))
+  (pad "4" smd rect (at 4.275 0) (size 0.3 1.6) (layers "F.Cu" "F.Mask")
+    (zone_connect 2) (tstamp f8bd219c-9573-4f8f-8c0d-baa81f4f8f9e))
+  (group "" (id 82f99e7e-3f13-4ca7-ac98-ef8c63e76ca8)
+    (members
+      08d6eb32-79b1-4add-95e8-604a71ee71ae
+      20c35273-a88d-4c21-9b72-04546959bafc
+      5d0084ce-5ee0-4b04-bc8e-60edc8e0d3e8
+      d32e6bf6-5ad0-429c-b6b0-ee88e5cc4753
+    )
+  )
+  (model "${KICAD6_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_0603-4Pin_6.0x3.5mm.wrl"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+)
