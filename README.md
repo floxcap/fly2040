@@ -2,8 +2,11 @@
 Basic RP2040 board.
 
 Note - most of these boards require a 3.3V power supply when programming.
-A simple programming PCB is being designed and will be released shortly.
 The intention is to be able to program the boards with a 1.27mm pitch test clip / pogo pins.
+
+The usb-programmer board is designed to accept the P50-E2 (shaft diameter 0.68mm) which should be soldered in
+to the (programmer) board.
+![Pogo pins](pcb/usb_programmer/p50_pogo.jpg)
 
 The v1 fly2040 board has been tested and is working except for the led/5V boost circuit - don't use.
 The v2 fly2040 board is work in progress - don't use.
