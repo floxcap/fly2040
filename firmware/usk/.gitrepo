@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github-floxcap.com:floxcap/usk.git
+	branch = main
+	commit = 1a39e9b46dac3ab7ddddad647d03575e41655dbb
+	parent = 9b8178278d8954c636211fc868f20244236d60c2
+	method = merge
+	cmdver = 0.4.6

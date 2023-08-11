@@ -1,0 +1,47 @@
+<brls:AppletFrame
+    iconInterpolation="linear"
+    footerHidden="false">
+    <brls:TabFrame
+        title="@i18n/main/title"
+        icon="@res/img/sys-rgb.png">
+
+        <brls:Tab label="@i18n/main/tabs/settings">
+            <SettingsTab />
+        </brls:Tab>
+
+        <brls:Separator />
+
+        <brls:Tab label="@i18n/main/tabs/pulse" >
+            <PulseTab />
+        </brls:Tab>
+
+        <brls:Tab label="@i18n/main/tabs/cycle" >
+            <CycleTab />
+        </brls:Tab>
+
+        <brls:Tab label="@i18n/main/tabs/rainbow" >
+            <RainbowTab />
+        </brls:Tab>
+
+        <brls:Separator />
+
+        <brls:Tab label="@i18n/main/tabs/load" >
+            <LoadTab />
+        </brls:Tab>
+
+        <brls:Tab label="@i18n/main/tabs/temperature" >
+            <TemperatureTab />
+        </brls:Tab>
+
+        <brls:Separator />
+
+        <brls:Tab label="@i18n/main/tabs/about" >
+            <AboutTab />
+        </brls:Tab>
+
+        <brls:Tab label="@i18n/main/tabs/debug" id="debug" >
+            <DebugTab />
+        </brls:Tab>
+
+    </brls:TabFrame>
+</brls:AppletFrame>

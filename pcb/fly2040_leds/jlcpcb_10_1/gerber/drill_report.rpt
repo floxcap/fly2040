@@ -1,0 +1,24 @@
+Drill report for panel_10_1.kicad_pcb
+Created on Tue Jul  4 12:46:50 2023
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'panel_10_1.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.200mm  0.0079"  (80 holes)
+    T2  0.200mm  0.0079"  (90 holes)
+
+    Total plated holes count 170
+
+
+Not plated through holes are merged with plated holes
+    unplated through holes:
+    =============================================================
+    T3  1.152mm  0.0454"  (3 holes)
+
+    Total unplated holes count 3

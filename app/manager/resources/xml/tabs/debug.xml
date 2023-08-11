@@ -1,0 +1,42 @@
+<brls:Box
+        width="auto"
+        height="auto">
+
+    <brls:ScrollingFrame
+            width="auto"
+            height="auto"
+            grow="1.0">
+
+        <brls:Box
+                width="auto"
+                height="auto"
+                axis="column"
+                paddingLeft="@style/brls/tab_frame/content_padding_sides"
+                paddingRight="@style/brls/tab_frame/content_padding_sides"
+                paddingTop="@style/brls/tab_frame/content_padding_top_bottom"
+                paddingBottom="@style/brls/tab_frame/content_padding_top_bottom">
+
+            <brls:InputCell
+                    id="input"/>
+
+            <brls:Box
+                    width="auto"
+                    height="auto"
+                    axis="column"
+                    paddingLeft="@style/brls/tab_frame/content_padding_sides"
+                    paddingRight="@style/brls/tab_frame/content_padding_sides"
+                    paddingTop="@style/brls/tab_frame/content_padding_top_bottom"
+                    paddingBottom="@style/brls/tab_frame/content_padding_top_bottom">
+
+                <brls:Label
+                        id="status"
+                        width="auto"
+                        height="auto"
+                        marginTop="15px"
+                        marginBottom="10px"/>
+            </brls:Box>
+        </brls:Box>
+
+    </brls:ScrollingFrame>
+
+</brls:Box>

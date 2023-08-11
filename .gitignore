@@ -16,6 +16,8 @@ _autosave-*
 *-save.pro
 *-save.kicad_pcb
 fp-info-cache
+firmware.uf2
+update.bin
 
 # Netlist files (exported from Eeschema)
 *.net
@@ -23,3 +25,19 @@ fp-info-cache
 # Autorouter files (exported from Pcbnew)
 *.dsn
 *.ses
+
+app/manager/build.nx/
+
+app/sysmodule/out/
+
+app/sysmodule/build/
+
+.idea/
+
+app/manager/sys-rgb-manager.elf
+app/manager/sys-rgb-manager.nacp
+app/manager/sys-rgb-manager.nro
+app/manager/sys-rgb-manager.map
+
+cmake-build-debug/
+cmake-build-release/

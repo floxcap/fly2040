@@ -1,0 +1,23 @@
+aliases:
+  - &arm
+    match-compiler-exe: "(.*/)?aarch64-none-elf-g(..)?"
+    code-insight-target-name: arm
+    include-dirs:
+      - "${compiler-exe-dir}/devkitA64/aarch64-none-elf/include/**"
+      - "${compiler-exe-dir}/devkitA64/lib/gcc/aarch64-none-elf/10.1.0/include/**"
+      - "${compiler-exe-dir}/libnx/include/**"
+      - "${compiler-exe-dir}/portlibs/switch/include/**"
+    defines:
+      __disable_irq(): # define builtin as empty
+      __enable_irq(): # define builtin as empty
+    defines-text: "
+#define SWITCH
+#define __SWITCH__
+"
+compilers:
+  - description: Devkitpro A64 C
+    <<: *arm
+    match-language: C
+  - description: Devkitpro A64 CPP
+    <<: *arm
+    match-language: CPP

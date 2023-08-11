@@ -1,0 +1,58 @@
+cycle.xml
+<brls:Box
+        width="auto"
+        height="auto">
+
+    <brls:ScrollingFrame
+            width="auto"
+            height="auto"
+            grow="1.0">
+
+        <brls:Box
+                width="auto"
+                height="auto"
+                axis="column"
+                paddingLeft="@style/brls/tab_frame/content_padding_sides"
+                paddingRight="@style/brls/tab_frame/content_padding_sides"
+                paddingTop="@style/brls/tab_frame/content_padding_top_bottom"
+                paddingBottom="@style/brls/tab_frame/content_padding_top_bottom">
+
+            <brls:BooleanCell
+                    id="cpu"/>
+
+            <brls:BooleanCell
+                    id="gpu"/>
+
+            <brls:Header
+                    width="auto"
+                    height="auto"
+                    title="@i18n/main/header/brightness"
+                    marginTop="15px"
+                    marginBottom="15px"/>
+
+            <brls:Box
+                    width="auto"
+                    height="auto"
+                    axis="row">
+
+                <brls:Label
+                        id="brightness_lbl"
+                        width="80"
+                        height="40"
+                        text="100"
+                        marginBottom="10px"
+                        horizontalAlign="center"
+                        verticalAlign="center"/>
+
+                <brls:Slider
+                        id="brightness"
+                        width="auto"
+                        height="40"
+                        grow="1"/>
+
+            </brls:Box>
+        </brls:Box>
+
+    </brls:ScrollingFrame>
+
+</brls:Box>

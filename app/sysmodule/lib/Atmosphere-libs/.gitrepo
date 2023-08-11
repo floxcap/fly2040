@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github-floxcap.com:floxcap/Atmosphere-libs.git
+	branch = master
+	commit = f01b58ff7ca4c9d593fd9aa38b64c7f9deb340ac
+	parent = 7e5140e635a4495b81922945dd4af1f5598fbb4e
+	method = merge
+	cmdver = 0.4.6

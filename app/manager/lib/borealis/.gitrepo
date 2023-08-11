@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github-floxcap.com:floxcap/borealis.git
+	branch = main
+	commit = 86cb847869ac49c593f57fb54e6dbcab949238af
+	parent = 7779862295220a51a16261ee9a0bb9753ee21bb6
+	method = merge
+	cmdver = 0.4.6

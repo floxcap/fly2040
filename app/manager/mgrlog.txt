@@ -1,0 +1,39 @@
+App Launch
+switch system theme: Light
+Using platform Switch
+glfw: GL Vendor: nouveau
+glfw: GL Renderer: NV120
+glfw: GL Version: 4.3 (Core Profile) Mesa 20.1.0-rc3
+glfw: GLFW Version: 3.3.4
+glfw: Monitor: Default
+Vibration clear #0
+Vibration clear #1
+Vibration clear #2
+Vibration clear #3
+Vibration clear #4
+switch system locale: en-GB
+Cannot find custom font, (Searched at: romfs:/font/font.ttf)
+Got version
+:{"cycle":{"brightness":0.5,"speed":3000.0},"load":{"brightness":0.5},"load_cpu":true,"load_gpu":false,"mode":"off","num_pixels":9,"pulse":{"brightness":0.5,"hue":1.0,"speed":3000.0},"rainbow":{"brightness":0.5,"speed":3000.0},"temperature":{"brightness":0.5},"update_ms":100}
+Get config failed:388
+Adding an inputs block token (tokens=1)
+Cannot set texture: 0
+Cannot set texture: 0
+Cannot set texture: 0
+Cannot set texture: 0
+Cannot set texture: 0
+Cannot set texture: 0
+Giving focus to brls::SidebarItem
+Hiding brls::AppletFrame
+push activity to the stack
+Showing brls::AppletFrame
+AppletFocusState_InFocus
+input blocked (tokens=1)
+input blocked (tokens=1)
+input blocked (tokens=1)
+input blocked (tokens=1)
+Window size changed to 1280x720, content size: 1280x720 factor: 1
+scale factor: 1
+input blocked (tokens=1)
+input blocked (tokens=1)
+Removing an inputs block token (tokens=0)

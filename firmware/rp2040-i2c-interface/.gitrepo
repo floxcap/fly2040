@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Nicolai-Electronics/rp2040-i2c-interface
+	branch = master
+	commit = 39d51bc276b2ebcc1e53d679203905ee5ad33054
+	parent = 67875e93f0a60c94a2f298f3567cea6a164d9b80
+	method = merge
+	cmdver = 0.4.6

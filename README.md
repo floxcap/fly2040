@@ -1,20 +1,12 @@
 # fly2040
-Basic RP2040 board.
 
-Note - most of these boards require a 3.3V power supply when programming.
-The intention is to be able to program the boards with a 1.27mm pitch test clip / pogo pins.
-(See below).
+RP2040 board, leds, firmware and homebrew designed to be picofly compatable.
 
-The fly2040_min board is the recommended board to use at this time and has been tested and working
-on V1/V2/Lite devices.
+NOTE: Using `git-subrepo` for submodules. See [git-subrepo](https://github.com/ingydotnet/git-subrepo) for usage.
 
-All other designs should be considered as work-in-progress and untested.
-
-![Mini board 3D Back](pcb/fly2040_min/fly2040_min_back.jpg)
-![Mini board 3D Front](pcb/fly2040_min/fly2040_min_front.jpg)
-![Mini board PCB](pcb/fly2040_min/fly2040_min_pcb.jpg)
-
-The usb-programmer board is designed to accept the P50-E2 (shaft diameter 0.68mm) which should be soldered in
-to the (programmer) board.
-![Pogo pins](pcb/usb_programmer/p50_pogo.jpg)
-
+## Credits
+- Further credits in relevant sub-folders.
+- A huge thank you to [SciresM](https://github.com/SciresM) for all of the guidance and help in getting this working.
+- Also a huge thank you to [CTCaer](https://github.com/CTCaer) for all of the guidance and focus on the small details.
+- Thanks to [rehius](https://github.com/rehius) for the picofly firmware which was the foundation for the fly2040 firmware.
+- Thanks to [lightninjay](https://gbatemp.net/members/lightninjay.643395/) for his guide [guide](doc/PicoFlyGuideV.6.2-1.pdf) and [guide-thread](https://gbatemp.net/download/a-definitive-picofly-install-guide.37968/).

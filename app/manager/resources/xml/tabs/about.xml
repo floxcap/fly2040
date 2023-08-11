@@ -1,0 +1,66 @@
+<brls:Box
+        width="auto"
+        height="auto">
+
+    <brls:ScrollingFrame
+            width="auto"
+            height="auto"
+            grow="1.0">
+
+        <brls:Box
+                width="auto"
+                height="auto"
+                axis="column"
+                paddingLeft="@style/brls/tab_frame/content_padding_sides"
+                paddingRight="@style/brls/tab_frame/content_padding_sides"
+                paddingTop="@style/brls/tab_frame/content_padding_top_bottom"
+                paddingBottom="@style/brls/tab_frame/content_padding_top_bottom">
+
+            <brls:Image
+                    width="auto"
+                    height="33%"
+                    image="@res/img/sys-rgb.png"
+                    marginBottom="@style/about/description_margin"/>
+
+            <brls:Box
+                    width="auto"
+                    height="auto"
+                    axis="row"
+                    marginBottom="@style/about/description_margin">
+
+                <brls:Label
+                        width="40%"
+                        height="auto"
+                        text="@i18n/main/about/title"
+                        fontSize="36"
+                        horizontalAlign="right"
+                        verticalAlign="top" />
+
+                <brls:Label
+                        width="auto"
+                        height="auto"
+                        text="@i18n/main/about/description"
+                        marginLeft="@style/about/description_margin" />
+
+            </brls:Box>
+
+            <brls:Box
+                    width="auto"
+                    height="auto"
+                    axis="column"
+                    alignItems="center"
+                    justifyContent="spaceEvenly"
+                    grow="1.0" >
+
+                <brls:Label
+                        width="auto"
+                        height="auto"
+                        text="@i18n/main/about/github" />
+
+            </brls:Box>
+
+        </brls:Box>
+
+    </brls:ScrollingFrame>
+
+</brls:Box>

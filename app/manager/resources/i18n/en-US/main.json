@@ -1,0 +1,63 @@
+{
+    "title": "sys-rgb Manager",
+    "tabs": {
+        "settings": "Settings",
+        "pulse": "Pulse",
+        "cycle": "Cycle",
+        "rainbow": "Rainbow",
+        "load": "Load",
+        "temperature": "Temperature",
+        "about": "About",
+        "debug": "Debug"
+    },
+
+    "header": {
+        "hue": "Hue",
+        "brightness": "Brightness",
+        "speed": "Speed",
+        "pixels": "Number of pixels (leds)"
+    },
+
+    "test": {
+        "version": "Get version"
+    },
+
+    "i18n": {
+        "title": "Language: {0} ({1})",
+        "lang": "English"
+    },
+
+    "mode": {
+        "title": "RGB Mode",
+        "off": "Off",
+        "pulse": "Pulse",
+        "cycle": "Cycle",
+        "rainbow": "Rainbow",
+        "load": "Load",
+        "temp": "Temperature"
+    },
+
+    "update": {
+        "title": "Update speed",
+        "s100": "Fast (200ms)",
+        "s250": "Average (250ms)",
+        "s500": "Slow (500ms)",
+        "s1000": "Very slow (1s)"
+    },
+
+    "load": {
+        "cpu": "CPU load",
+        "gpu": "GPU load"
+    },
+
+    "settings": {
+        "update": "Update speed"
+    },
+
+    "about": {
+        "title": "sys-rgb Manager",
+        "description": "A manager for the sys-rgb sysmodule.",
+        "github": "Find it on github.com/floxcap/fly2040"
+    }
+}
+
