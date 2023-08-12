@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/wren-lang/wren.git
+	branch = main
+	commit = c2a75f1eaf9b1ba1245d7533a723360863fb012d
+	parent = 1886a3599a568cba1996c1a260176283a2532ac5
+	method = merge
+	cmdver = 0.4.6
