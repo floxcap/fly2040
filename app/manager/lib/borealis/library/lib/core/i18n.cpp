@@ -100,14 +100,20 @@ static void loadLocale(std::string locale, nlohmann::json* target)
         std::ifstream jsonStream;
         jsonStream.open(path);
 
+        // allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         try
+#endif
         {
             jsonStream >> strings;
         }
+        // allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         catch (const std::exception& e)
         {
             Logger::error("Error while loading \"{}\": {}", path, e.what());
         }
+#endif
 
         jsonStream.close();
 
@@ -131,7 +137,10 @@ namespace internal
     {
         nlohmann::json::json_pointer pointer;
 
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         try
+#endif
         {
             pointer = nlohmann::json::json_pointer("/" + std::string(BRLS_I18N_PREFIX) + stringName);
         }

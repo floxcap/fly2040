@@ -12,6 +12,7 @@
 #include "board_detect.h"
 #include "misc.h"
 #include "config.h"
+#include "wren.h"
 
 extern int ws_pio_offset;
 
@@ -44,10 +45,21 @@ void init_pixels()
     i2c_context.mem_address_written = false;
     i2c_context.write = false;
     i2c_context.reg.state.num_pixels = 9;
+    i2c_context.reg.state.version = ((VER_HI&0xFF)<<8)|(VER_LO&0xFF);
     i2c_context.reg.state.speed = F2U32(5000);
     i2c_context.reg.state.hue = F2U32(0.0f);
     i2c_context.reg.state.brightness = F2U32(1.0f);
-    i2c_context.reg.state.scale = F2U32(0.0f);
+    i2c_context.reg.state.temp = F2U32(0.0f);
+    i2c_context.reg.state.cpu = F2U32(0.0f);
+    i2c_context.reg.state.gpu = F2U32(0.0f);
+    i2c_context.reg.state.res0 = F2U32(0.0f);
+    i2c_context.reg.state.res1 = F2U32(0.0f);
+    i2c_context.reg.state.res2 = F2U32(0.0f);
+    i2c_context.reg.state.res3 = F2U32(0.0f);
+    i2c_context.reg.state.flags = 0;
+    i2c_context.reg.state.block_addr = 0;
+    i2c_context.reg.state.block_hash = 0;
+    i2c_context.reg.state.lock_len = 0;
     if (is_i2c_configured())
     {
         // Once initial i2c received default to off.
@@ -242,6 +254,9 @@ void leds_mode()
 
     enable_pixels();
 
+    WrenConfiguration config;
+    wrenInitConfiguration(&config);
+
     while (1)
     {
         uint32_t ms = to_ms_since_boot(get_absolute_time());
@@ -259,8 +274,12 @@ void leds_mode()
 
         if (state_updated)
         {
-            // Scale from 0.0 - 1.0
-            _state.scale = CLAMP(_state.scale, 0, U32F_SCALE);
+            // temp, cpu etc from 0.0 - 1.0
+            _state.temp = CLAMP(_state.temp, 0, U32F_SCALE);
+            _state.cpu = CLAMP(_state.cpu, 0, U32F_SCALE);
+            _state.gpu = CLAMP(_state.gpu, 0, U32F_SCALE);
+            _state.res0 = CLAMP(_state.res0, 0, U32F_SCALE);
+            _state.res1 = CLAMP(_state.res1, 0, U32F_SCALE);
             // Brightness from 0.0 - 1.0
             _state.brightness = CLAMP(_state.brightness, 0, U32F_SCALE);
             // Hue from 0.0 - 1.0
@@ -308,11 +327,35 @@ void leds_mode()
                 }
                 break;
 
-            case RgbMode_Load:
+            case RgbMode_CpuLoad:
+                {
+                    uint32_t c = HSVtoRGB(U322F(_state.cpu) * 360, 1, U322F(_state.brightness));
+                    set_pixel(c, -1);
+                }
+                break;
+            case RgbMode_GpuLoad:
+                {
+                    uint32_t c = HSVtoRGB(U322F(_state.gpu) * 360, 1, U322F(_state.brightness));
+                    set_pixel(c, -1);
+                }
+                break;
+            case RgbMode_CpuGpuLoad:
+                {
+                    float s = (U322F(_state.cpu) + U322F(_state.gpu)) / 2.0f;
+                    uint32_t c = HSVtoRGB(s * 360, 1, U322F(_state.brightness));
+                    set_pixel(c, -1);
+                }
+                break;
             case RgbMode_Temperature:
                 {
-                    uint32_t c = HSVtoRGB(U322F(_state.scale) * 360, 1, U322F(_state.brightness));
+                    uint32_t c = HSVtoRGB(U322F(_state.temp) * 360, 1, U322F(_state.brightness));
                     set_pixel(c, -1);
+                }
+                break;
+
+            case RgbMode_Wren:
+                {
+                    // TODO: call current wren script.
                 }
                 break;
         }

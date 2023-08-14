@@ -132,26 +132,19 @@ bool ConfigImpl::SaveConfig()
 
 bool ConfigImpl::Save()
 {
-    try
+    std::lock_guard lock(_mutex);
+    ams::fs::FileHandle cfgFile;
+    ams::fs::DeleteFile(FILE_CONFIG_FILE_PATH);
+    ams::fs::CreateFile(FILE_CONFIG_FILE_PATH, 0);
+    if (Context::r_ok("cfg sv", ams::fs::OpenFile(&cfgFile, FILE_CONFIG_FILE_PATH, ams::fs::OpenMode_All)))
     {
-        std::lock_guard lock(_mutex);
-        ams::fs::FileHandle cfgFile;
-        ams::fs::DeleteFile(FILE_CONFIG_FILE_PATH);
-        ams::fs::CreateFile(FILE_CONFIG_FILE_PATH, 0);
-        if (Context::r_ok("cfg sv", ams::fs::OpenFile(&cfgFile, FILE_CONFIG_FILE_PATH, ams::fs::OpenMode_All)))
-        {
-            ON_SCOPE_EXIT { ams::fs::CloseFile(cfgFile); };
+        ON_SCOPE_EXIT { ams::fs::CloseFile(cfgFile); };
 
-            toStream(_stream, 4);
-            if (Context::r_ok("cfg wr", ams::fs::WriteFile(cfgFile, 0, _buf, _stream.available(), ams::fs::WriteOption::Flush)))
-            {
-                return true;
-            }
+        toStream(_stream, 4);
+        if (Context::r_ok("cfg wr", ams::fs::WriteFile(cfgFile, 0, _buf, _stream.available(), ams::fs::WriteOption::Flush)))
+        {
+            return true;
         }
-    }
-    catch (nlohmann::json::exception& exception)
-    {
-        FileUtils::LogLine("[cfg] json error");
     }
 
     return false;

@@ -23,7 +23,12 @@ namespace brls
 [[noreturn]] void fatal(std::string message)
 {
     brls::Logger::error("Fatal error: {}", message);
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
     throw std::logic_error(message);
+#else
+    std::abort();
+#endif
 }
 
 std::string loadFileContents(const std::string &path) {

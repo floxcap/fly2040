@@ -444,8 +444,11 @@ double GLFWVideoContext::getScaleFactor()
 
 GLFWVideoContext::~GLFWVideoContext()
 {
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
     try
     {
+#endif
         if (this->nvgContext)
 #ifdef BOREALIS_USE_OPENGL
 #ifdef USE_GLES2
@@ -464,11 +467,14 @@ GLFWVideoContext::~GLFWVideoContext()
             nvgDeleteD3D11(this->nvgContext);
             D3D11_CONTEXT = nullptr;
 #endif
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
     }
     catch (...)
     {
         Logger::error("Cannot delete nvg Context");
     }
+#endif
     glfwDestroyWindow(this->window);
     glfwTerminate();
 }

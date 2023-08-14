@@ -63,11 +63,11 @@ TARGET_VERSION	:= $(shell git describe --dirty --always --tags)
 #---------------------------------------------------------------------------------
 DGB_FLAG =
 
-DEFINES	+=	-DDISABLE_IPC -DTARGET="\"$(TARGET)\"" -DTARGET_VERSION="\"$(TARGET_VERSION)\""
+DEFINES	+=	-DDISABLE_IPC -DJSON_NOEXCEPTION -DTARGET="\"$(TARGET)\"" -DTARGET_VERSION="\"$(TARGET_VERSION)\""
 
 ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
 
-CFLAGS	:=	$(DGB_FLAG) -Wall -O2 -flto -ffunction-sections $(ARCH) $(DEFINES)
+CFLAGS	:=	$(DGB_FLAG) -Wall -O2 -flto -ffunction-sections -fno-exceptions $(ARCH) $(DEFINES)
 
 CFLAGS	+=	$(INCLUDE) -D__SWITCH__
 

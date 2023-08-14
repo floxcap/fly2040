@@ -1,24 +1,42 @@
 #ifndef FLY2040_CONSTANTS_H
 #define FLY2040_CONSTANTS_H
 
+// Remaining RgbState size = 255 bytes - header items (mode, num_pixels etc).
+#define RGB_BLOCK_DATA_LEN 200
+#define RGB_BLOCK_NAME_LEN 8
+
 enum RgbMode
 {
     RgbMode_Off,
     RgbMode_Pulse,
     RgbMode_Cycle,
     RgbMode_Rainbow,
-    RgbMode_Load,
-    RgbMode_Temperature
+    RgbMode_CpuLoad,
+    RgbMode_GpuLoad,
+    RgbMode_CpuGpuLoad,
+    RgbMode_Temperature,
+    RgbMode_Wren
 };
 
 // Register mapping for i2c device.
 typedef struct __attribute__((__packed__)) {
     uint8_t mode;
     uint8_t num_pixels;
+    uint16_t version;
     uint32_t brightness;
-    uint32_t scale;
     uint32_t speed;
     uint32_t hue;
+    uint32_t temp;
+    uint32_t cpu;
+    uint32_t gpu;
+    uint32_t res0;
+    uint32_t res1;
+    uint16_t flags;
+    uint32_t block_addr;
+    uint32_t block_hash;
+    uint8_t block_len;
+    char block_name[RGB_BLOCK_NAME_LEN];
+    uint8_t block_data[RGB_BLOCK_DATA_LEN];
 #ifdef __cplusplus
 #endif
 } RgbState;

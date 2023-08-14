@@ -22,6 +22,8 @@
 namespace brls
 {
 
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
 // Exception thrown when using a BoundView with an unknown ID for
 // the given owner.
 class ViewNotFoundException : public std::exception
@@ -35,6 +37,7 @@ class ViewNotFoundException : public std::exception
   private:
     std::string errorMessage;
 };
+#endif
 
 #define BRLS_BIND(type, name, id) brls::BoundView<type> name = brls::BoundView<type>(id, this)
 
@@ -106,7 +109,12 @@ class BoundView
             this->view = dynamic_cast<T*>(this->ownerView->getView(this->id));
 
             if (!this->view)
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
                 throw ViewNotFoundException(this->ownerView, this->id);
+#else
+                std::abort();
+#endif
         }
         // Then resolve by owner view
         else if (this->ownerActivity)
@@ -114,11 +122,21 @@ class BoundView
             this->view = (T*)this->ownerActivity->getView(this->id);
 
             if (!this->view)
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
                 throw ViewNotFoundException(this->ownerActivity, this->id);
+#else
+                std::abort();
+#endif
         }
         else
         {
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
             throw std::logic_error("No owner view or activity given to BoundView");
+#else
+            std::abort();
+#endif
         }
     }
 };

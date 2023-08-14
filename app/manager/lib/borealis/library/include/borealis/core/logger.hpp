@@ -22,7 +22,7 @@
 #endif
 
 #include <fmt/core.h>
-
+#include <compat/optexcept.hpp>
 #include <borealis/core/event.hpp>
 #include <chrono>
 #include <string>
@@ -79,7 +79,8 @@ class Logger
         time_t tt    = std::chrono::system_clock::to_time_t(now);
         auto time_tm = localtime(&tt);
 
-        try
+// allow disabling exceptions
+        TRY
         {
 #ifdef IOS
             fmt::print("{:02d}:{:02d}:{:02d}.{:03d} {} ", time_tm->tm_hour, time_tm->tm_min, time_tm->tm_sec, (int)ms, color);
@@ -95,12 +96,11 @@ class Logger
 #endif
             logEvent.fire(log);
         }
-        catch (const std::exception& e)
+        CATCH (const std::exception& e)
         {
             // will be printed after the first fmt::print (so after the log tag)
             printf("! Invalid log format string: \"%s\": %s\n", fmt::basic_string_view<char>(format).data(), e.what());
         }
-
 #ifdef __MINGW32__
         fflush(0);
 #endif

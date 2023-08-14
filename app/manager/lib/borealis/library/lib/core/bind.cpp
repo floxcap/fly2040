@@ -18,7 +18,8 @@
 
 namespace brls
 {
-
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
 ViewNotFoundException::ViewNotFoundException(View* owner, std::string searchedId)
 {
     this->errorMessage = "Cannot find view with ID \"" + searchedId + "\" in owner view " + owner->describe();
@@ -33,5 +34,5 @@ const char* ViewNotFoundException::what() const noexcept
 {
     return this->errorMessage.c_str();
 }
-
+#endif
 } // namespace brls

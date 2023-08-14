@@ -53,28 +53,12 @@ public:
 
     static nlohmann::json fromText(const char* configJson, size_t len)
     {
-        try
-        {
-            return nlohmann::json::parse(configJson, configJson+len);
-        }
-        catch (nlohmann::json::exception& exception)
-        {
-        }
-
-        return {};
+        return nlohmann::json::parse(configJson, configJson+len);
     }
 
     static CfgSet parse(const char* configJson, size_t len)
     {
-        try
-        {
-            return nlohmann::json::parse(configJson, configJson+len).template get<CfgSet>();
-        }
-        catch (nlohmann::json::exception& exception)
-        {
-        }
-
-        return {};
+        return nlohmann::json::parse(configJson, configJson+len).template get<CfgSet>();
     }
 
 protected:

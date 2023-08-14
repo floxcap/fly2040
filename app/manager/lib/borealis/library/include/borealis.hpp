@@ -17,6 +17,8 @@
 
 #pragma once
 
+#include <compat/optexcept.hpp>
+
 // Core
 #include <borealis/core/actions.hpp>
 #include <borealis/core/activity.hpp>

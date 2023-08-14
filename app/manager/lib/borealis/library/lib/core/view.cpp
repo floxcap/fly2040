@@ -1513,7 +1513,10 @@ bool View::applyXMLAttribute(std::string name, std::string value)
     {
         // Strip the px and parse the float value
         std::string newFloat = value.substr(0, value.length() - 2);
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         try
+#endif
         {
             float floatValue = std::stof(newFloat);
             if (this->floatAttributes.count(name) > 0)
@@ -1526,10 +1529,13 @@ bool View::applyXMLAttribute(std::string name, std::string value)
                 return false;
             }
         }
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         catch (const std::invalid_argument& exception)
         {
             return false;
         }
+#endif
     }
 
     // Ends with % -> percentage
@@ -1537,7 +1543,10 @@ bool View::applyXMLAttribute(std::string name, std::string value)
     {
         // Strip the % and parse the float value
         std::string newFloat = value.substr(0, value.length() - 1);
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         try
+#endif
         {
             float floatValue = std::stof(newFloat);
 
@@ -1554,10 +1563,13 @@ bool View::applyXMLAttribute(std::string name, std::string value)
                 return false;
             }
         }
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         catch (const std::invalid_argument& exception)
         {
             return false;
         }
+#endif
     }
     // Starts with @style -> float
     else if (startsWith(value, "@style/"))
@@ -1655,7 +1667,10 @@ bool View::applyXMLAttribute(std::string name, std::string value)
     }
 
     // Valid float -> float, otherwise unknown attribute
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
     try
+#endif
     {
         float newValue = std::stof(value);
         if (this->floatAttributes.count(name) > 0)
@@ -1668,10 +1683,13 @@ bool View::applyXMLAttribute(std::string name, std::string value)
             return false;
         }
     }
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
     catch (const std::invalid_argument& exception)
     {
         return false;
     }
+#endif
 }
 
 void View::applyXMLAttributes(tinyxml2::XMLElement* element)

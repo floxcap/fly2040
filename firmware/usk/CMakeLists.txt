@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE MinSizeRel)
+add_compile_definitions(WREN_OPT_META=0)
+add_compile_definitions(WREN_OPT_RANDOM=0)
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include($ENV{PICO_SDK_PATH}/pico_sdk_init.cmake)
@@ -14,9 +16,10 @@ project(usk C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-# Add executable. Default name is the project name, version 0.1
+include_directories(${PROJECT_SOURCE_DIR} ../wren/src/vm ../wren/src/include)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/*.c ../wren/src/vm/*.c)
 
-add_executable(usk main.c board_detect.c fuses.c pio_upload.c boot_detect.c config.c misc.c payload.c glitch.c leds.c)
+add_executable(usk ${SRC_FILES})
 
 target_compile_definitions(usk PRIVATE PICO_NO_BINARY_INFO)
 

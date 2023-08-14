@@ -64,23 +64,11 @@ namespace ams {
     }
 
     void Main() {
-        try
-        {
-            FileUtils::Initialize();
-            FileUtils::LogLine("=== " TARGET " " TARGET_VERSION " ===");
-            ams::sys::rgb::InitializeIpcServer();
-            ams::sys::rgb::LoopIpcServer();
-            ams::sys::rgb::FinalizeIpcServer();
-        }
-        catch (const std::exception &ex)
-        {
-        }
-        catch (...)
-        {
-            //std::exception_ptr p = std::current_exception();
-            //FileUtils::LogLine("[!?] %s", p ? p.__cxa_exception_type()->name() : "...");
-        }
-
+        FileUtils::Initialize();
+        FileUtils::LogLine("=== " TARGET " " TARGET_VERSION " ===");
+        ams::sys::rgb::InitializeIpcServer();
+        ams::sys::rgb::LoopIpcServer();
+        ams::sys::rgb::FinalizeIpcServer();
         FileUtils::LogLine("Exit");
         svcSleepThread(1000000ULL);
         FileUtils::Exit();

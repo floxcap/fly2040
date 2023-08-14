@@ -97,14 +97,20 @@ void Threading::performSyncTasks()
 
     for (auto& f : local)
     {
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         try
         {
+#endif
             f();
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
         }
         catch (std::exception& e)
         {
             brls::Logger::error("error: performSyncTasks: {}", e.what());
         }
+#endif
     }
 
     m_delay_mutex.lock();
@@ -129,15 +135,20 @@ void Threading::performSyncTasks()
 
         if (duration >= d.delayMilliseconds)
         {
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
             try
             {
+#endif
                 d.func();
+// allow disabling exceptions
+#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND))
             }
             catch (std::exception& e)
             {
                 brls::Logger::error("error: performSyncTasks(delay): {}", e.what());
             }
-
+#endif
             m_delay_mutex.lock();
             if (m_delay_cancel_set.count(d.index)) m_delay_cancel_set.erase(d.index);
             m_delay_mutex.unlock();
