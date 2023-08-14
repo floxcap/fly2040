@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/floxcap/pico-littlefs-lib.git
+	branch = master
+	commit = d7b9d3452d4ab861a36583f4e68d46ebbf90c007
+	parent = 8da95341e675c74912a839abca0435399421e059
+	method = merge
+	cmdver = 0.4.6
