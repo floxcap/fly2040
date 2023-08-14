@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/bergzand/NanoCBOR.git
+	branch = master
+	commit = 1bc789705057c42be32aea17aeec97763aece3c7
+	parent = b89d4340170b8ab67198aaf39063f1421da7a3af
+	method = merge
+	cmdver = 0.4.6

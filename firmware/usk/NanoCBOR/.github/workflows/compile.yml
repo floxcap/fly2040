@@ -1,0 +1,38 @@
+name: Compile and Test
+on: [push]
+jobs:
+  compile-and-test:
+    strategy:
+      matrix:
+        include:
+          - container: gcc:10
+            artifact: gcc-10
+            cc: gcc
+          - container: gcc:11
+            artifact: gcc-11
+            cc: gcc
+          - container: silkeh/clang:11
+            artifact: clang-11
+            cc: clang
+          - container: silkeh/clang:12
+            artifact: clang-12
+            cc: clang
+    runs-on: ubuntu-latest
+    env:
+      CC: ${{ matrix.cc }}
+    container: ${{ matrix.container }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install prerequisites"
+        run:  apt update && apt install -y pkg-config libcunit1-dev meson ninja-build python3-pexpect
+      - name: Configure
+        run: meson build
+      - name: compile
+        run: ninja -C build
+      - name: Run tests
+        run: meson test -C build --verbose --timeout-multiplier 5
+      - name: Upload test log
+        uses: actions/upload-artifact@v2
+        with:
+          name: testlog-${{ matrix.artifact }}.txt
+          path: build/meson-logs/testlog.txt
