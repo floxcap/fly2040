@@ -12,6 +12,7 @@
 #include "board_detect.h"
 #include "misc.h"
 #include "config.h"
+#include "pico_hal.h"
 #include "wren.h"
 
 extern int ws_pio_offset;
@@ -54,12 +55,9 @@ void init_pixels()
     i2c_context.reg.state.gpu = F2U32(0.0f);
     i2c_context.reg.state.res0 = F2U32(0.0f);
     i2c_context.reg.state.res1 = F2U32(0.0f);
-    i2c_context.reg.state.res2 = F2U32(0.0f);
-    i2c_context.reg.state.res3 = F2U32(0.0f);
-    i2c_context.reg.state.flags = 0;
-    i2c_context.reg.state.block_addr = 0;
-    i2c_context.reg.state.block_hash = 0;
-    i2c_context.reg.state.lock_len = 0;
+    i2c_context.reg.state.res8 = 0;
+    i2c_context.reg.state.rd_flags = 0;
+    i2c_context.reg.state.wr_flags = 0;
     if (is_i2c_configured())
     {
         // Once initial i2c received default to off.
@@ -74,6 +72,11 @@ void init_pixels()
     _state = i2c_context.reg.state;
     _lock_nr = spin_lock_claim_unused(true);
     _lock = spin_lock_init(_lock_nr);
+
+    if (pico_mount(true) != LFS_ERR_OK)
+    {
+
+    }
 }
 
 bool enable_pixels()

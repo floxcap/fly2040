@@ -2,8 +2,7 @@
 #define FLY2040_CONSTANTS_H
 
 // Remaining RgbState size = 255 bytes - header items (mode, num_pixels etc).
-#define RGB_BLOCK_DATA_LEN 200
-#define RGB_BLOCK_NAME_LEN 8
+#define RGB_CBOR_DATA_LEN 216
 
 enum RgbMode
 {
@@ -31,12 +30,10 @@ typedef struct __attribute__((__packed__)) {
     uint32_t gpu;
     uint32_t res0;
     uint32_t res1;
-    uint16_t flags;
-    uint32_t block_addr;
-    uint32_t block_hash;
-    uint8_t block_len;
-    char block_name[RGB_BLOCK_NAME_LEN];
-    uint8_t block_data[RGB_BLOCK_DATA_LEN];
+    uint8_t res8;
+    uint8_t rd_flags;
+    uint8_t wr_flags;
+    uint8_t cbor_data[RGB_BLOCK_DATA_LEN];
 #ifdef __cplusplus
 #endif
 } RgbState;

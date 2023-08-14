@@ -34,16 +34,17 @@ pico_set_binary_type(usk no_flash)
 pico_enable_stdio_uart(usk 0)
 pico_enable_stdio_usb(usk 0)
 
-# Add the standard library to the build
-target_link_libraries(usk pico_stdlib)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPICO_USE_MALLOC_MUTEX=1")
+add_subdirectory(pico-littlefs-lib)
 
-# Add any user requested libraries
 target_link_libraries(usk
         hardware_pio
         hardware_adc
         hardware_flash
         hardware_i2c
         pico_i2c_slave
+        pico_stdlib
+        littlefs-lib
         )
 
 pico_add_extra_outputs(usk)

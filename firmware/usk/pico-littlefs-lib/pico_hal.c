@@ -57,7 +57,7 @@ static int pico_hal_read(lfs_block_t block, lfs_off_t off, void* buffer, lfs_siz
     assert(block < pico_cfg.block_count);
     assert(off + size <= pico_cfg.block_size);
     // read flash via XIP mapped space
-    memcpy(buffer, FS_BASE + XIP_NOCACHE_NOALLOC_BASE + (block * pico_cfg.block_size) + off, size);
+    memcpy(buffer, FS_BASE + XIP_BASE + (block * pico_cfg.block_size) + off, size);
     return LFS_ERR_OK;
 }
 
@@ -110,10 +110,19 @@ int pico_mount(bool format) {
 #if LIB_PICO_MULTICORE
     recursive_mutex_init(&fs_mtx);
 #endif
-    if (format)
-        lfs_format(&pico_cfg);
-    // mount the filesystem
-    return lfs_mount(&pico_cfg);
+    int rc = lfs_mount(&pico_cfg);
+    if (LFS_ERR_OK != rc)
+    {
+        if (format)
+        {
+            rc = lfs_format(&pico_cfg);
+            if (LFS_ERR_OK == rc)
+            {
+                rc = lfs_mount(&pico_cfg);
+            }
+        }
+    }
+    return rc;
 }
 
 int pico_open(const char* path, int flags) {
