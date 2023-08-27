@@ -16,8 +16,8 @@ project(usk C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-include_directories(${PROJECT_SOURCE_DIR} ../wren/src/vm ../wren/src/include)
-file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/*.c ../wren/src/vm/*.c)
+include_directories(${PROJECT_SOURCE_DIR} ../wren/src/vm ../wren/src/include NanoCBOR/include ../../app/common/include)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/*.c ../wren/src/vm/*.c NanoCBOR/src/*.c)
 
 add_executable(usk ${SRC_FILES})
 

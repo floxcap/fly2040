@@ -14,6 +14,7 @@
 #include "config.h"
 #include "pico_hal.h"
 #include "wren.h"
+#include "cbor.h"
 
 extern int ws_pio_offset;
 
@@ -55,9 +56,9 @@ void init_pixels()
     i2c_context.reg.state.gpu = F2U32(0.0f);
     i2c_context.reg.state.res0 = F2U32(0.0f);
     i2c_context.reg.state.res1 = F2U32(0.0f);
-    i2c_context.reg.state.res8 = 0;
-    i2c_context.reg.state.rd_flags = 0;
-    i2c_context.reg.state.wr_flags = 0;
+    i2c_context.reg.state.rd_cbor = 0;
+    i2c_context.reg.state.wr_cbor = 0;
+    i2c_context.reg.state.len_cbor = 0;
     if (is_i2c_configured())
     {
         // Once initial i2c received default to off.
@@ -144,7 +145,7 @@ uint32_t HSVtoRGB(float fH, float fS, float fV)
     }
 }
 
-void put_pixel(uint32_t pixel_grb)
+void __time_critical_func(put_pixel)(uint32_t pixel_grb)
 {
     static bool led_enabled = false;
     if (is_pico())
@@ -200,7 +201,7 @@ void update_pixels()
 
 // Our handler is called from the I2C ISR, so it must complete quickly. Blocking calls
 // printing to stdio may interfere with interrupt handling.
-static void i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event)
+static void __time_critical_func(i2c_slave_handler)(i2c_inst_t *i2c, i2c_slave_event_t event)
 {
     switch (event) {
         case I2C_SLAVE_RECEIVE: // master has written some data
@@ -251,11 +252,14 @@ static void setup_slave()
     i2c_slave_init(i2c0, I2C_SLAVE_ADDRESS, &i2c_slave_handler);
 }
 
-void leds_mode()
+void __time_critical_func(leds_mode)()
 {
     setup_slave();
 
     enable_pixels();
+
+    uint8_t rd_cbor = 0;
+    uint8_t wr_cbor = 0;
 
     WrenConfiguration config;
     wrenInitConfiguration(&config);
@@ -293,6 +297,23 @@ void leds_mode()
             _state.num_pixels = MIN(MAX_PIXELS, _state.num_pixels);
             // Save i2c configured flag if not already set.
             set_i2c_configured();
+        }
+
+        // A CBOR write has occurred from master...
+        if (wr_cbor != _state.wr_cbor)
+        {
+            wr_cbor = _state.wr_cbor;
+
+            if (handle_cbor(_state.data_cbor, &_state.len_cbor))
+            {
+                // Prep cbor read ready flag.
+                _state.rd_cbor = ++rd_cbor;
+
+                // Update outgoing i2c data.
+                uint32_t saved_irq = spin_lock_blocking(_lock);
+                _i2c_state = _state;
+                spin_unlock(_lock, saved_irq);
+            }
         }
 
         switch (_state.mode)

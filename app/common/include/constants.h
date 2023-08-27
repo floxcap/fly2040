@@ -30,10 +30,10 @@ typedef struct __attribute__((__packed__)) {
     uint32_t gpu;
     uint32_t res0;
     uint32_t res1;
-    uint8_t res8;
-    uint8_t rd_flags;
-    uint8_t wr_flags;
-    uint8_t cbor_data[RGB_BLOCK_DATA_LEN];
+    uint8_t rd_cbor;
+    uint8_t wr_cbor;
+    uint8_t len_cbor;
+    uint8_t data_cbor[RGB_CBOR_DATA_LEN];
 #ifdef __cplusplus
 #endif
 } RgbState;

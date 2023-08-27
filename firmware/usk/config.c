@@ -124,7 +124,7 @@ int get_weigth(int offset) {
     return weight;
 }
 
-int find_best_record(int * max_weight) {
+int __time_critical_func(find_best_record)(int * max_weight) {
     static int last_weight = -1;
     static int last_offset = 0;
     int best_offset = -1;

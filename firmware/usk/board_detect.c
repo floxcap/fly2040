@@ -111,7 +111,7 @@ void detect_board()
     _jmp_leds = test_jmp_leds();
 }
 
-int led_pin()
+int __time_critical_func(led_pin)()
 {
     switch(cur_board){
         case BOARD_XO:
@@ -125,7 +125,7 @@ int led_pin()
     }; 
 }
 
-int pwr_pin()
+int __time_critical_func(pwr_pin)()
 {
     switch(cur_board){
         case BOARD_XO:
@@ -137,7 +137,7 @@ int pwr_pin()
     }; 
 }
 
-int scl_pin()
+int __time_critical_func(scl_pin)()
 {
     switch(cur_board){
         case BOARD_XO:
@@ -153,7 +153,7 @@ int scl_pin()
     }; 
 }
 
-int sda_pin()
+int __time_critical_func(sda_pin)()
 {
     switch(cur_board){
         case BOARD_XO:
@@ -169,7 +169,7 @@ int sda_pin()
     }; 
 }
 
-int gli_pin()
+int __time_critical_func(gli_pin)()
 {
     switch(cur_board){
         case BOARD_XO:
@@ -183,7 +183,7 @@ int gli_pin()
     }; 
 }
 
-int jmp_lv_pin()
+int __time_critical_func(jmp_lv_pin)()
 {
     switch(cur_board) {
         case BOARD_WS:
@@ -197,7 +197,7 @@ int jmp_lv_pin()
     }
 }
 
-int jmp_leds_pin()
+int __time_critical_func(jmp_leds_pin)()
 {
     switch(cur_board) {
         case BOARD_WS:
@@ -211,17 +211,17 @@ int jmp_leds_pin()
     }
 }
 
-bool is_jmp_lv()
+bool __time_critical_func(is_jmp_lv)()
 {
     return _jmp_lv;
 }
 
-bool is_jmp_leds()
+bool __time_critical_func(is_jmp_leds)()
 {
     return _jmp_leds;
 }
 
-bool is_pico()
+bool __time_critical_func(is_pico)()
 {
     return cur_board == BOARD_PI;
 }
